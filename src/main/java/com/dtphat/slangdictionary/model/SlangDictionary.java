@@ -3,6 +3,22 @@ package com.dtphat.slangdictionary.model;
 import java.io.*;
 import java.util.*;
 
+/**
+ * Lớp {@code SlangDictionary} quản lý toàn bộ dữ liệu của từ điển Slang.
+ * <p>
+ * Lớp này sử dụng mô hình Singleton để đảm bảo chỉ có duy nhất một thể hiện
+ * tồn tại trong suốt vòng đời của ứng dụng. Dữ liệu được lưu bằng {@link HashMap}
+ * giúp tra cứu nhanh O(1). Ngoài ra, lịch sử tìm kiếm được lưu bằng {@link List}.
+ * <p>
+ * Cơ chế khởi tạo:
+ * <ul>
+ *   <li>Thử tải dữ liệu từ file nhị phân {@code slang.dat} (đã được tuần tự hóa).</li>
+ *   <li>Nếu thất bại (chưa có file hoặc lỗi đọc), hệ thống sẽ đọc dữ liệu gốc từ file {@code slang.txt},
+ *   xây dựng {@code HashMap}, và sau đó lưu lại dưới dạng {@code slang.dat} cho những lần chạy sau.</li>
+ * </ul>
+ *
+ * @author Doan Thanh Phat
+ */
 public class SlangDictionary implements Serializable{
     // --- Singleton Pattern ---
 
