@@ -129,4 +129,45 @@ public class SlangDictionary implements Serializable{
             }
         }
     }
+    // --- API Công khai cho Controller ---
+
+    /**
+     * Chức năng 1: Tìm kiếm theo slang word.
+     */
+    public List<String> findBySlang(String slang) {
+        if (slang != null && !slang.isEmpty()) {
+            // Thêm vào lịch sử (nếu chưa có)
+            if (!this.searchHistory.contains(slang)) {
+                this.searchHistory.add(slang);
+            }
+        }
+        return this.slangMap.get(slang); // Trả về null nếu không tìm thấy
+    }
+
+    /**
+     * Chức năng 2: Tìm kiếm theo definition.
+     */
+    public Map<String, List<String>> findByDefinition(String keyword) {
+        Map<String, List<String>> results = new HashMap<>();
+        String lowerKeyword = keyword.toLowerCase();
+
+        // Duyệt qua toàn bộ HashMap
+        for (Map.Entry<String, List<String>> entry : this.slangMap.entrySet()) {
+            // Duyệt qua danh sách definition của mỗi slang
+            for (String definition : entry.getValue()) {
+                if (definition.toLowerCase().contains(lowerKeyword)) {
+                    results.put(entry.getKey(), entry.getValue());
+                    break; // Đã tìm thấy, không cần check các definition khác của slang này
+                }
+            }
+        }
+        return results;
+    }
+
+    /**
+     * Chức năng 3: Hiển thị history.
+     */
+    public List<String> getHistory() {
+        return this.searchHistory;
+    }
 }
