@@ -170,4 +170,35 @@ public class SlangDictionary implements Serializable{
     public List<String> getHistory() {
         return this.searchHistory;
     }
+
+    /**
+     * Chức năng 7: Reset danh sách slang words gốc.
+     */
+    public void resetDictionary() throws IOException {
+        System.out.println("Đang reset dữ liệu...");
+        this.slangMap.clear();
+        this.searchHistory.clear();
+        loadFromTextFile(SOURCE_FILE_PATH); // Tải lại từ file .txt gốc
+        saveData(DATA_FILE_PATH);          // Lưu lại file .dat mới
+        System.out.println("Reset thành công!");
+    }
+    /**
+     * Chức năng 8: Random 1 slang word.
+     * Trả về một cặp Key-Value (Slang và List<Definition>)
+     */
+    public Map.Entry<String, List<String>> getRandomSlang() {
+        if (this.slangMap.isEmpty()) {
+            return null;
+        }
+        // Chuyển KeySet thành List để lấy random theo index
+        List<String> keys = new ArrayList<>(this.slangMap.keySet());
+        Random random = new Random();
+
+        String randomSlangKey = keys.get(random.nextInt(keys.size()));
+        List<String> definitions = this.slangMap.get(randomSlangKey);
+
+        // Trả về một Entry (cặp key-value)
+        return new AbstractMap.SimpleEntry<>(randomSlangKey, definitions);
+    }
+
 }

@@ -4,5 +4,6 @@ module com.dtphat.slangdictionary {
 
 
     opens com.dtphat.slangdictionary to javafx.fxml;
+    opens com.dtphat.slangdictionary.controller to javafx.fxml;
     exports com.dtphat.slangdictionary;
 }

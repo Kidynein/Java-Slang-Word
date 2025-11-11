@@ -11,11 +11,11 @@ import java.io.IOException;
 public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        SlangDictionary.getInstance();
-        // -----------------------------
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("main-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
+        Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+        stage.setMinWidth(600);  // Ví dụ: tối thiểu 600px rộng
+        stage.setMinHeight(400); // Ví dụ: tối thiểu 400px cao
+        stage.setTitle("Slang Word Dictionary");
         stage.setScene(scene);
         stage.show();
     }
