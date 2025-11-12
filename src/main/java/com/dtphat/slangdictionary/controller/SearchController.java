@@ -31,7 +31,6 @@ public class SearchController {
      */
     @FXML
     public void initialize() {
-        // Lấy "bộ não" Singleton
         this.dictionary = SlangDictionary.getInstance();
     }
 
@@ -39,7 +38,7 @@ public class SearchController {
     private void handleSearchButton() {
         String keyword = searchField.getText().trim();
 
-        // 1. Xóa kết quả cũ
+        // Xóa kết quả cũ
         resultListView.getItems().clear();
 
         if (keyword.isEmpty()) {
@@ -47,7 +46,7 @@ public class SearchController {
             return;
         }
 
-        // 2. Kiểm tra xem người dùng muốn tìm theo Slang hay Definition
+        // Kiểm tra xem người dùng muốn tìm theo Slang hay Definition
         if (radioSearchBySlang.isSelected()) {
             searchBySlang(keyword);
         } else {
@@ -59,10 +58,10 @@ public class SearchController {
      * Xử lý logic tìm theo Slang
      */
     private void searchBySlang(String keyword) {
-        // 3. Gọi Chức năng 1 từ Model
+        //  Gọi từ Model
         List<String> definitions = dictionary.findBySlang(keyword);
 
-        // 4. Hiển thị kết quả mới
+        //  Hiển thị kết quả mới
         if (definitions != null && !definitions.isEmpty()) {
             resultListView.getItems().add("Kết quả cho Slang '" + keyword + "':");
             // Thêm từng definition vào ListView
@@ -78,10 +77,10 @@ public class SearchController {
      * Xử lý logic tìm theo Definition
      */
     private void searchByDefinition(String keyword) {
-        // 3. Gọi Chức năng 2 từ Model
+        // Gọi từ Model
         Map<String, List<String>> results = dictionary.findByDefinition(keyword);
 
-        // 4. Hiển thị kết quả mới
+        // Hiển thị kết quả mới
         if (results != null && !results.isEmpty()) {
             resultListView.getItems().add(results.size() + " Slang(s) chứa từ khóa '" + keyword + "':");
             // Duyệt qua Map và định dạng lại để hiển thị

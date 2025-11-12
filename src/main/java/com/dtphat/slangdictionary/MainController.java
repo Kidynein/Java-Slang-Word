@@ -11,18 +11,13 @@ import java.io.IOException;
 
 public class MainController {
 
-    // Tham chiếu đến BorderPane gốc trong FXML
     @FXML
     private BorderPane rootPane;
     @FXML
     public void initialize() {
-        // (Code tải danh sách bên trái của bạn_
-        // loadSlangList(); // (Giữ lại nếu bạn đang dùng)
-
-        // SỬA DÒNG NÀY:
-        // Tải màn hình Chào mừng vào trung tâm
         loadView("welcome-view.fxml");
     }
+
     // --- Các hàm xử lý sự kiện cho Menu ---
 
     @FXML
@@ -34,9 +29,8 @@ public class MainController {
     @FXML
     private void handleShowHistory() {
         System.out.println("Tải màn hình lịch sử...");
+        loadView("history-view.fxml");
     }
-
-    // (Thêm các hàm handleShowAdd, handleShowEdit, handleShowDelete...)
 
     @FXML
     private void handleReset() {
@@ -55,8 +49,6 @@ public class MainController {
             e.printStackTrace();
         }
     }
-
-    // (Thêm các hàm handleShowRandom, handleShowSlangQuiz...)
 
     // --- HÀM TIỆN ÍCH ---
 

@@ -31,8 +31,8 @@
             </children>
         </HBox>
 
-        <TextField fx:id="searchField" promptText="Nhập từ khóa..." />
-        <Button fx:id="searchButton" mnemonicParsing="false" text="Tìm" />
+        <TextField fx:id="searchField" onAction="#handleSearchButton" promptText="Nhập từ khóa..." />
+        <Button fx:id="searchButton" onAction="#handleSearchButton" mnemonicParsing="false" text="Tìm" />
 
         <ListView fx:id="resultListView" VBox.vgrow="ALWAYS" />
 

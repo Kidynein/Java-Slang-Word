@@ -17,10 +17,6 @@ public class WelcomeController {
 
     private SlangDictionary dictionary;
 
-    /**
-     * Hàm initialize() được gọi tự động khi FXML được tải.
-     * Sẽ gọi Chức năng 8 (Random Slang) và hiển thị.
-     */
     @FXML
     public void initialize() {
         this.dictionary = SlangDictionary.getInstance();
