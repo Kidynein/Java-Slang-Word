@@ -17,7 +17,7 @@
                         <MenuItem mnemonicParsing="false" onAction="#handleShowSearch" text="Tìm kiếm" />
                         <MenuItem mnemonicParsing="false" onAction="#handleShowHistory" text="Xem lịch sử" />
                         <SeparatorMenuItem mnemonicParsing="false" />
-                        <MenuItem mnemonicParsing="false" text="Thêm Slang" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleShowAdd" text="Thêm Slang" />
                         <MenuItem mnemonicParsing="false" text="Sửa Slang" />
                         <MenuItem mnemonicParsing="false" text="Xóa Slang" />
                     </items>

@@ -33,6 +33,12 @@ public class MainController {
     }
 
     @FXML
+    private void handleShowAdd() {
+        System.out.println("Tải màn hình Thêm Slang...");
+        loadView("add-view.fxml");
+    }
+
+    @FXML
     private void handleReset() {
         try {
             SlangDictionary.getInstance().resetDictionary();

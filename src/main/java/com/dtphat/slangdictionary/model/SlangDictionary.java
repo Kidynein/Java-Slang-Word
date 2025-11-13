@@ -172,6 +172,32 @@ public class SlangDictionary implements Serializable{
     }
 
     /**
+     * Chức năng 4: Add 1 slang word mới.
+     * Controller sẽ hỏi người dùng, sau đó gọi hàm này.
+     * @param isDuplicate true = "Duplicate" (thêm definition mới), false = "Overwrite" (xóa def cũ, thêm def mới)
+     */
+    public void addSlang(String slang, String definition, boolean isDuplicate) throws IOException {
+        List<String> definitions;
+
+        if (isDuplicate && this.slangMap.containsKey(slang)) {
+            // 1. Chế độ "Duplicate": Lấy list cũ và thêm vào
+            definitions = this.slangMap.get(slang);
+        } else {
+            // 2. Chế độ "Overwrite" hoặc "Thêm mới": Tạo list mới
+            definitions = new ArrayList<>();
+        }
+
+        definitions.add(definition);
+        this.slangMap.put(slang, definitions);
+
+        // Lưu lại thay đổi ra file .dat
+        saveData(DATA_FILE_PATH);
+    }
+    public boolean slangExists(String slang) {
+        return this.slangMap.containsKey(slang);
+    }
+
+    /**
      * Chức năng 7: Reset danh sách slang words gốc.
      */
     public void resetDictionary() throws IOException {
