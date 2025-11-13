@@ -198,6 +198,14 @@ public class SlangDictionary implements Serializable{
     }
 
     /**
+     * Chức năng 6: Delete 1 slang word.
+     */
+    public void deleteSlang(String slang) throws IOException {
+        this.slangMap.remove(slang);
+        saveData(DATA_FILE_PATH);
+    }
+
+    /**
      * Chức năng 7: Reset danh sách slang words gốc.
      */
     public void resetDictionary() throws IOException {

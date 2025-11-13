@@ -39,6 +39,12 @@ public class MainController {
     }
 
     @FXML
+    private void handleShowDelete() {
+        System.out.println("Tải màn hình Xóa Slang...");
+        loadView("delete-view.fxml"); // <-- Đảm bảo gọi đúng file FXML
+    }
+    
+    @FXML
     private void handleReset() {
         try {
             SlangDictionary.getInstance().resetDictionary();

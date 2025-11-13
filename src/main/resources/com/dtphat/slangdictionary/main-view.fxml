@@ -19,7 +19,7 @@
                         <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem mnemonicParsing="false" onAction="#handleShowAdd" text="Thêm Slang" />
                         <MenuItem mnemonicParsing="false" text="Sửa Slang" />
-                        <MenuItem mnemonicParsing="false" text="Xóa Slang" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleShowDelete" text="Xóa Slang" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Trò chơi">
