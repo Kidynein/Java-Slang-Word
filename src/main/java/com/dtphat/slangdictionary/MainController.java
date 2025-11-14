@@ -39,9 +39,15 @@ public class MainController {
     }
 
     @FXML
+    private void handleShowEdit() {
+        System.out.println("Tải màn hình Sửa Slang...");
+        loadView("edit-view.fxml");
+    }
+
+    @FXML
     private void handleShowDelete() {
         System.out.println("Tải màn hình Xóa Slang...");
-        loadView("delete-view.fxml"); // <-- Đảm bảo gọi đúng file FXML
+        loadView("delete-view.fxml");
     }
     
     @FXML

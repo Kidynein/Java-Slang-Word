@@ -198,6 +198,19 @@ public class SlangDictionary implements Serializable{
     }
 
     /**
+     * Chức năng 5: Edit 1 slang word.
+     */
+    public void editSlang(String oldSlang, String newSlang, List<String> newDefinitions) throws IOException {
+        // Nếu tên slang thay đổi, ta phải xóa key cũ
+        if (!oldSlang.equals(newSlang)) {
+            this.slangMap.remove(oldSlang);
+        }
+        // Thêm/cập nhật key mới
+        this.slangMap.put(newSlang, newDefinitions);
+        saveData(DATA_FILE_PATH);
+    }
+
+    /**
      * Chức năng 6: Delete 1 slang word.
      */
     public void deleteSlang(String slang) throws IOException {

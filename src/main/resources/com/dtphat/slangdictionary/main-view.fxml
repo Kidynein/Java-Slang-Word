@@ -18,7 +18,7 @@
                         <MenuItem mnemonicParsing="false" onAction="#handleShowHistory" text="Xem lịch sử" />
                         <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem mnemonicParsing="false" onAction="#handleShowAdd" text="Thêm Slang" />
-                        <MenuItem mnemonicParsing="false" text="Sửa Slang" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleShowEdit" text="Sửa Slang" />
                         <MenuItem mnemonicParsing="false" onAction="#handleShowDelete" text="Xóa Slang" />
                     </items>
                 </Menu>
