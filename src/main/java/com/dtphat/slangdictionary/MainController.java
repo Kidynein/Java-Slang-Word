@@ -74,6 +74,12 @@ public class MainController {
         loadView("random-view.fxml");
     }
 
+    @FXML
+    private void handleShowSlangQuiz() {
+        System.out.println("Tải màn hình Đố Slang...");
+        loadView("slang-quiz-view.fxml");
+    }
+
     // --- HÀM TIỆN ÍCH ---
 
     private void loadView(String fxmlFile) {

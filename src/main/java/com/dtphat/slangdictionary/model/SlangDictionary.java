@@ -228,6 +228,7 @@ public class SlangDictionary implements Serializable{
         saveData(DATA_FILE_PATH);          // Lưu lại file .dat mới
         System.out.println("Reset thành công!");
     }
+
     /**
      * Chức năng 8: Random 1 slang word.
      * Trả về một cặp Key-Value (Slang và List<Definition>)
@@ -245,6 +246,38 @@ public class SlangDictionary implements Serializable{
 
         // Trả về một Entry (cặp key-value)
         return new AbstractMap.SimpleEntry<>(randomSlangKey, definitions);
+    }
+
+    /**
+     * Dùng record (một lớp data đơn giản) để chứa dữ liệu câu đố
+     * Nó sẽ chứa câu hỏi, 4 lựa chọn, và đáp án đúng (dưới dạng text)
+     */
+    public record QuizQuestion(String question, List<String> options, String correctAnswer) {}
+    /**
+     * Chức năng 9: Đố vui (1 slang, 4 definitions).
+     */
+    public QuizQuestion createSlangQuiz() {
+        List<String> options = new ArrayList<>();
+
+        // 1. Lấy đáp án đúng
+        Map.Entry<String, List<String>> correctEntry = getRandomSlang();
+        String question = correctEntry.getKey(); // Slang là câu hỏi
+        String correctAnswer = correctEntry.getValue().get(0); // Lấy definition đầu tiên làm đáp án
+        options.add(correctAnswer);
+
+        // 2. Lấy 3 đáp án sai
+        while (options.size() < 4) {
+            Map.Entry<String, List<String>> wrongEntry = getRandomSlang();
+            String wrongAnswer = wrongEntry.getValue().get(0);
+
+            if (!options.contains(wrongAnswer)) {
+                options.add(wrongAnswer);
+            }
+        }
+
+        // 3. Xáo trộn đáp án
+        Collections.shuffle(options);
+        return new QuizQuestion(question, options, correctAnswer);
     }
 
 }
