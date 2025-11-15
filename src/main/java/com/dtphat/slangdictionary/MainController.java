@@ -68,6 +68,12 @@ public class MainController {
         }
     }
 
+    @FXML
+    private void handleShowRandom() {
+        System.out.println("Tải màn hình Random Slang...");
+        loadView("random-view.fxml");
+    }
+
     // --- HÀM TIỆN ÍCH ---
 
     private void loadView(String fxmlFile) {

@@ -98,7 +98,6 @@ public class SlangDictionary implements Serializable{
 
     /**
      * (Private) Đọc file .txt gốc (slang.txt) và build HashMap
-     * Định dạng file giả định: Slang`Definition1|Definition2
      */
     private void loadFromTextFile(String fileName) throws IOException {
         // Dùng ClassLoader để đọc file từ thư mục resources
