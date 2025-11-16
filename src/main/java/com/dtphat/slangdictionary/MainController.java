@@ -60,8 +60,7 @@ public class MainController {
             alert.setHeaderText(null);
             alert.setContentText("Đã reset dữ liệu về file gốc thành công!");
             alert.showAndWait();
-
-            rootPane.setCenter(null);
+            loadView("welcome-view.fxml");
 
         } catch (IOException e) {
             e.printStackTrace();

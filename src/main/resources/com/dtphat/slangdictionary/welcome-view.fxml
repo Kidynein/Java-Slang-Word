@@ -12,10 +12,15 @@
     <children>
         <Label text="Chào mừng bạn đến với Từ điển Slang Word">
             <font>
-                <Font name="System Bold" size="24.0" />
+                <Font name="System Bold" size="30.0" />
             </font>
         </Label>
-        <Label text="Sử dụng menu bên trên để chọn các chức năng." />
+
+        <Label text="Sử dụng menu bên trên để chọn các chức năng.">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
 
         <Separator prefWidth="200.0" />
 

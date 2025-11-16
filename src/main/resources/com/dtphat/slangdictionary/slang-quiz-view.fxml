@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 
 <VBox alignment="TOP_CENTER" spacing="15.0"
-      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.dtphat.slangdictionary.controller.SlangQuizController">
     <children>
         <Label text="Đố Vui: Slang -> Definition">
@@ -16,7 +16,11 @@
                 <Font name="System Bold" size="24.0" />
             </font>
         </Label>
-        <Label text="Slang Word sau đây có nghĩa là gì?" />
+        <Label text="Slang Word sau đây có nghĩa là gì?">
+            <font>
+                <Font size = "18.0"/>
+            </font>
+        </Label>
 
         <Label fx:id="questionLabel" text="[SLANG WORD]" textFill="#007bff">
             <font>

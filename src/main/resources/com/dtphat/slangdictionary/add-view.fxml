@@ -18,10 +18,10 @@
         </Label>
 
         <Label text="Slang Word:" />
-        <TextField fx:id="slangField" promptText="Ví dụ: AFK" />
+        <TextField fx:id="slangField" maxWidth="300.0" promptText="Ví dụ: AFK" />
 
         <Label text="Definition (Ý nghĩa):" />
-        <TextField fx:id="definitionField" promptText="Ví dụ: Away From Keyboard" />
+        <TextField fx:id="definitionField" maxWidth="300.0" promptText="Ví dụ: Away From Keyboard" />
 
         <Button fx:id="addButton" mnemonicParsing="false" onAction="#handleAddButton" text="Thêm Slang Word" />
 

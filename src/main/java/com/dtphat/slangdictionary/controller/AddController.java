@@ -21,7 +21,6 @@ public class AddController {
 
     @FXML
     public void initialize() {
-        // Lấy "bộ não" Singleton
         this.dictionary = SlangDictionary.getInstance();
     }
 
@@ -84,7 +83,7 @@ public class AddController {
         }
     }
 
-    // --- Các hàm tiện ích (Helper Methods) ---
+    // --- Các hàm tiện ích ---
 
     private void showSuccessAlert(String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);

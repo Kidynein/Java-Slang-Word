@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
 
 import java.util.List;
 import java.util.Map;
@@ -19,10 +18,6 @@ public class SearchController {
     private ListView<String> resultListView;
     @FXML
     private RadioButton radioSearchBySlang;
-    @FXML
-    private RadioButton radioSearchByDef;
-    @FXML
-    private ToggleGroup searchToggleGroup;
 
     private SlangDictionary dictionary;
 

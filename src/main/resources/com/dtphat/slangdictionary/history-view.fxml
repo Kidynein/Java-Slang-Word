@@ -6,8 +6,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" spacing="10.0"
-      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" spacing="10.0"
+      xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.dtphat.slangdictionary.controller.HistoryController">
     <children>
         <Label text="Lịch sử Tìm kiếm">

@@ -14,7 +14,6 @@ public class SlangQuizController {
     @FXML private Button optionButton3;
     @FXML private Button optionButton4;
     @FXML private Label feedbackLabel;
-    @FXML private Button nextButton;
 
     // --- Biến nội bộ ---
     private SlangDictionary dictionary;

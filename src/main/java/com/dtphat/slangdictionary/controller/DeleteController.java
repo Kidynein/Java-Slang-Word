@@ -18,7 +18,6 @@ public class DeleteController {
 
     @FXML
     public void initialize() {
-        // Lấy "bộ não" Singleton
         this.dictionary = SlangDictionary.getInstance();
     }
 
