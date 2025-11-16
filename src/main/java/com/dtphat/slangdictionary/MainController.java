@@ -80,6 +80,12 @@ public class MainController {
         loadView("slang-quiz-view.fxml");
     }
 
+    @FXML
+    private void handleShowDefQuiz() {
+        System.out.println("Tải màn hình Đố Definition...");
+        loadView("def-quiz-view.fxml");
+    }
+
     // --- HÀM TIỆN ÍCH ---
 
     private void loadView(String fxmlFile) {

@@ -259,13 +259,13 @@ public class SlangDictionary implements Serializable{
     public QuizQuestion createSlangQuiz() {
         List<String> options = new ArrayList<>();
 
-        // 1. Lấy đáp án đúng
+        // Lấy đáp án đúng
         Map.Entry<String, List<String>> correctEntry = getRandomSlang();
         String question = correctEntry.getKey(); // Slang là câu hỏi
         String correctAnswer = correctEntry.getValue().get(0); // Lấy definition đầu tiên làm đáp án
         options.add(correctAnswer);
 
-        // 2. Lấy 3 đáp án sai
+        // Lấy 3 đáp án sai
         while (options.size() < 4) {
             Map.Entry<String, List<String>> wrongEntry = getRandomSlang();
             String wrongAnswer = wrongEntry.getValue().get(0);
@@ -275,9 +275,34 @@ public class SlangDictionary implements Serializable{
             }
         }
 
-        // 3. Xáo trộn đáp án
+        // Xáo trộn đáp án
         Collections.shuffle(options);
         return new QuizQuestion(question, options, correctAnswer);
     }
 
+    /**
+     * Chức năng 10: Đố vui (1 definition, 4 slangs).
+     */
+    public QuizQuestion createDefinitionQuiz() {
+        List<String> options = new ArrayList<>();
+
+        // Lấy đáp án đúng
+        Map.Entry<String, List<String>> correctEntry = getRandomSlang();
+        String question = correctEntry.getValue().get(0); // Definition là câu hỏi
+        String correctAnswer = correctEntry.getKey(); // Slang là đáp án
+        options.add(correctAnswer);
+
+        // Lấy 3 đáp án sai
+        while (options.size() < 4) {
+            String wrongAnswer = getRandomSlang().getKey(); // Lấy 3 slang ngẫu nhiên khác
+
+            if (!options.contains(wrongAnswer)) {
+                options.add(wrongAnswer);
+            }
+        }
+
+        // Xáo trộn đáp án
+        Collections.shuffle(options);
+        return new QuizQuestion(question, options, correctAnswer);
+    }
 }

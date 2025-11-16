@@ -26,7 +26,7 @@
                     <items>
                         <MenuItem mnemonicParsing="false" onAction="#handleShowRandom" text="Random Slang" />
                         <MenuItem mnemonicParsing="false" onAction="#handleShowSlangQuiz" text="Đố Slang" />
-                        <MenuItem mnemonicParsing="false" text="Đố Definition" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleShowDefQuiz" text="Đố Definition" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Hệ thống">
