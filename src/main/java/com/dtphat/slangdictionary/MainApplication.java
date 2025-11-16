@@ -17,6 +17,13 @@ public class MainApplication extends Application {
         stage.setMinHeight(400);
         stage.setTitle("Slang Word Dictionary");
         stage.setScene(scene);
+        stage.setOnCloseRequest(event -> {
+            try {
+                SlangDictionary.getInstance().saveData("slang.dat");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
         stage.show();
     }
 }
