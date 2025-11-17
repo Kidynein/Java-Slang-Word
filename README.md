@@ -1,6 +1,6 @@
 # Slang Word Dictionary (JavaFX)
 
-This is the project for the **Java Application Programming (CSC13002)** course. It is a full-featured Slang Word Dictionary built using JavaFX, Maven, and following an MVC design pattern.
+This is the project for the **Java Application Programming (CSC13102)** course. It is a full-featured Slang Word Dictionary built using JavaFX, Maven, and following an MVC design pattern.
 
 ## Features
 
